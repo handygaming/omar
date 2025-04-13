@@ -20,13 +20,13 @@ body{
 }
 .maincard{
     width: 300px;
-    height: 430px;
+    height: 450px;
     background-color: blanchedalmond;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: 30px;
     border-radius: 20px;
     box-shadow: inset 0 0 20px 0px black;
     opacity: 0;
@@ -43,8 +43,8 @@ body{
     }
 }
 .image{
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     background-image: url(../images/me.PNG);
     background-position: center;
     background-size: cover;
@@ -53,7 +53,7 @@ body{
     border: 4px black solid;
     box-shadow: 0 0 20px 0px #444444;
     opacity: 0;
-    animation: image 2s ease forwards,toup 1s 2s ease-in-out infinite;
+    animation: image 2s ease forwards,toup 2s 2s ease-in-out infinite;
 }
 @keyframes image{
     0%{
@@ -67,13 +67,13 @@ body{
 }
 @keyframes toup{
     50%{
-        transform: translateY(2px);
+        transform: translateY(-3px);
     }
 }
 .about{
     width: 100%;
     height: 40px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     color: white;
     opacity: 0;
     animation: about 1s ease forwards;
@@ -97,17 +97,15 @@ body{
     text-shadow: 0px 2px 4px black;
 }
 .links{
-    width: 100%;
-    height: calc(100% - 180px);
-    padding: 10px;
+    width: 80%;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 .links .link{
     width: 100%;
-    height: calc(100% / 3);
-    border-radius: 15px;
+    height: 40px;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -120,7 +118,7 @@ body{
     transition: scale .5s ease;
 }
 .link i{
-    font-size: 40px;
+    font-size: 35px;
     color: white;
     margin-right: 20px;
 }
@@ -139,18 +137,23 @@ body{
 .links .whatsapp{
     background-color: #25d366;
 }
+.links .snapchat{
+    background-color: #FFFC00;
+}
 .links .number{
     background-color: rgb(60, 60, 60);
 }
-.instagram:hover,.whatsapp:hover,.number:hover{
+.instagram:hover,.whatsapp:hover,.snapchat:hover,.number:hover{
     scale: 1.05;
 }
-.insta,.whats,.num{
+.insta,.whats,.snap,.num{
     color: white;
+    font-size: 14px;
     text-decoration: none;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: left;
     align-items: center;
+    text-shadow: 0 0 3px black;
 }
