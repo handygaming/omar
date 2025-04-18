@@ -1,159 +1,167 @@
-::selection{
-    background-color: black;
-    color: white;
+::selection {
+  background-color: black;
+  color: white;
 }
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bolder;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
 }
-body{
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.maincard{
-    width: 300px;
-    height: 450px;
-    background-color: blanchedalmond;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: inset 0 0 20px 0px black;
+.maincard {
+  width: 300px;
+  height: 450px;
+  background-color: blanchedalmond;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: inset 0 0 20px 0px black;
+  opacity: 0;
+  animation: maincard 0.5s ease forwards;
+}
+@keyframes maincard {
+  0% {
+    scale: 0;
     opacity: 0;
-    animation: maincard .5s ease forwards;
+  }
+  100% {
+    scale: 1;
+    opacity: 1;
+  }
 }
-@keyframes maincard{
-    0%{
-        scale: 0;
-        opacity: 0;
-    }
-    100%{
-        scale: 1;
-        opacity: 1;
-    }
+.image {
+  width: 110px;
+  height: 110px;
+  background-image: url(../images/me.PNG);
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  border: 2px black solid;
+  box-shadow: 0 0 20px 0px #444444;
+  opacity: 0;
+  animation: image 2s ease forwards, toup 2s 2s ease-in-out infinite;
 }
-.image{
-    width: 110px;
-    height: 110px;
-    background-image: url(../images/me.PNG);
-    background-position: center;
-    background-size: cover;
-    margin-bottom: 10px;
-    border-radius: 50%;
-    border: 4px black solid;
-    box-shadow: 0 0 20px 0px #444444;
+@keyframes image {
+  0% {
     opacity: 0;
-    animation: image 2s ease forwards,toup 2s 2s ease-in-out infinite;
+    transform: translateY(-200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-@keyframes image{
-    0%{
-        opacity: 0;
-        transform: translateY(-200px);
-    }
-    100%{
-        opacity: 1;
-        transform: translateY(0);
-    }
+@keyframes toup {
+  50% {
+    transform: translateY(-3px);
+  }
 }
-@keyframes toup{
-    50%{
-        transform: translateY(-3px);
-    }
+.about {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  color: white;
+  opacity: 0;
+  animation: about 1s ease forwards;
+  animation-delay: 1s;
 }
-.about{
-    width: 100%;
-    height: 40px;
-    margin-bottom: 20px;
-    color: white;
+@keyframes about {
+  0% {
     opacity: 0;
-    animation: about 1s ease forwards;
-    animation-delay: 1s;
+    scale: 0;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
 }
-@keyframes about{
-    0%{
-        opacity: 0;
-        scale: 0;
-    }100%{
-        opacity: 1;
-        scale: 1;
-    }
+.about .name {
+  text-align: center;
+  text-shadow: 0px 2px 4px black;
 }
-.about .name{
-    text-align: center;
-    text-shadow: 0px 2px 4px black;
+.about .age {
+  text-align: center;
+  text-shadow: 0px 2px 4px black;
 }
-.about .age{
-    text-align: center;
-    text-shadow: 0px 2px 4px black;
+.links {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-.links{
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.links .link {
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px black solid;
+  box-shadow: 0 0 5px black;
+  opacity: 0;
+  padding-left: 10px;
+  animation: link 1s ease forwards;
+  animation-delay: calc(var(--i) * 0.4s);
+  transition: scale 0.5s ease;
 }
-.links .link{
-    width: 100%;
-    height: 40px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px black solid;
-    box-shadow: 0 0 5px black;
+.link i {
+  font-size: 35px;
+  color: white;
+  margin-right: 20px;
+}
+@keyframes link {
+  0% {
     opacity: 0;
-    padding-left: 10px;
-    animation: link 1s ease forwards;
-    animation-delay: calc(var(--i) * 0.4s);
-    transition: scale .5s ease;
+    transform: translateX(-200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
-.link i{
-    font-size: 35px;
-    color: white;
-    margin-right: 20px;
+.links .instagram {
+  background-image: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
 }
-@keyframes link{
-    0%{
-        opacity: 0;
-        transform: translateX(-200px);
-    }100%{
-        opacity: 1;
-        transform: translateX(0);
-    }
+.links .whatsapp {
+  background-color: #25d366;
 }
-.links .instagram{
-    background-image: linear-gradient(to right , #833ab4 , #fd1d1d , #fcb045);
+.links .snapchat {
+  background-color: #fffc00;
 }
-.links .whatsapp{
-    background-color: #25d366;
+.links .number {
+  background-color: rgb(60, 60, 60);
 }
-.links .snapchat{
-    background-color: #FFFC00;
+.instagram:hover,
+.whatsapp:hover,
+.snapchat:hover,
+.number:hover {
+  scale: 1.05;
 }
-.links .number{
-    background-color: rgb(60, 60, 60);
-}
-.instagram:hover,.whatsapp:hover,.snapchat:hover,.number:hover{
-    scale: 1.05;
-}
-.insta,.whats,.snap,.num{
-    color: white;
-    font-size: 14px;
-    text-decoration: none;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    text-shadow: 0 0 3px black;
+.insta,
+.whats,
+.snap,
+.num {
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  text-shadow: 0 0 3px black;
 }
